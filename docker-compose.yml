@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: javaapp
+    
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+
+  db:
+    image: mysql:8.0
+    container_name: my-mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: demo
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: Ztech@44
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - my-network
+
+  # web:
+  #   depends_on:
+  #     - mysql
+  #   build: .
+  #   ports:
+  #     - "8080:8080"
+
+volumes:
+  mysql-data:
+
+networks:
+  my-network:
+    driver: bridge
