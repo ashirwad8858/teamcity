@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+        maven 'maven-1' // Replace with the name configured in Global Tool Configuration
+    }
 
   stages {
 
