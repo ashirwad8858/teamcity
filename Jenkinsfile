@@ -25,8 +25,9 @@ pipeline {
       steps{
         sh "mvn clean verify sonar:sonar \
   -Dsonar.projectKey=devsecops-numeric-application \
-  -Dsonar.host.url=https://30012-port-9b3da16e5e284b6d.labs.kodekloud.com \
-  -Dsonar.login=sqp_780ef4492cb1f72477281cb9c5a6d2fe31d3b288"
+  -Dsonar.projectName='devsecops-numeric-application' \
+  -Dsonar.host.url=http://34.238.176.231:9000 \
+  -Dsonar.token=sqp_5fafd44201432b6183cf817d4b4a15df582428e5"
       }
       
       
