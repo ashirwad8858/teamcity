@@ -26,7 +26,7 @@ pipeline {
     // }
     stage('SonarQube'){
       steps{
-        sh "mvn clean  sonar:sonar \
+        sh "mvn clean verify sonar:sonar \
   -Dsonar.projectKey=devsecops-numeric-application \
   -Dsonar.projectName='devsecops-numeric-application' \
   -Dsonar.host.url=http://34.238.176.231:9000 \
