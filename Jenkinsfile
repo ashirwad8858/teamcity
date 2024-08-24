@@ -27,10 +27,10 @@ pipeline {
     stage('SonarQube'){
       steps{
         sh "mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=devsecops-numeric-application \
-  -Dsonar.projectName='devsecops-numeric-application' \
-  -Dsonar.host.url=http://34.238.176.231:9000 \
-  -Dsonar.token=sqp_5fafd44201432b6183cf817d4b4a15df582428e5"
+  -Dsonar.projectKey=employee-java \
+  -Dsonar.projectName='employee-java' \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_eb104fcf426dcb6a0606700d3e89c95cc16e5980"
       }
       
       
